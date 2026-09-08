@@ -14,8 +14,8 @@ This project tackles that trade-off head-on. Rather than optimising for accuracy
 
 The approach:
 
-- Build three base recommenders — **content-based filtering** (CBF), **collaborative filtering** (CF), and **SVD** — each with a known blind spot toward the echo chamber.
-- Combine them into **four hybrid variations**, adding three custom mechanisms — `add_serendipity`, `ensure_diversity`, and Maximal Marginal Relevance (`MMR`) — to push diversity without abandoning relevance.
+- Build three base recommenders : **content-based filtering** (CBF), **collaborative filtering** (CF), and **SVD** each with a known blind spot toward the echo chamber.
+- Combine them into **four hybrid variations**, adding three custom mechanisms : `add_serendipity`, `ensure_diversity`, and Maximal Marginal Relevance (`MMR`)  to push diversity without abandoning relevance.
 - Evaluate every variation on four metrics that measure both *how relevant* and *how diverse* the output is.
 
 **Headline result:** Hybrid Model 4 (content-based + SVD + all three diversity mechanisms) was the most balanced, genuinely diverse recommendations that still track the user's preferences.
@@ -48,11 +48,11 @@ flowchart TD
 
 **Stages**
 
-1. **Pre-processing** — drop the `timestamp` column, extract each film's release **year** from its title, and one-hot encode the pipe-delimited `genres` string into 19 binary columns.
-2. **Feature scaling** — standardise the genre features (`StandardScaler`) so distance-based models aren't skewed.
-3. **Data integration** — merge the frames on `movieId` (the primary key) so ratings and movie features line up.
-4. **Modelling** — three base recommenders plus four hybrids (see below).
-5. **Evaluation** — score each hybrid on genre diversity, similarity, novelty, and intra-list similarity.
+1. **Pre-processing** : drop the `timestamp` column, extract each film's release **year** from its title, and one-hot encode the pipe-delimited `genres` string into 19 binary columns.
+2. **Feature scaling** : standardise the genre features (`StandardScaler`) so distance-based models aren't skewed.
+3. **Data integration** : merge the frames on `movieId` (the primary key) so ratings and movie features line up.
+4. **Modelling** : three base recommenders plus four hybrids (see below).
+5. **Evaluation** : score each hybrid on genre diversity, similarity, novelty, and intra-list similarity.
 
 **The three diversity mechanisms** (used by Hybrid Models 2 and 4):
 
