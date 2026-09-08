@@ -1,6 +1,6 @@
 # Mitigating the Echo Chamber Issue in Movie Recommendation Systems
 
-A movie recommender that deliberately balances **relevance** against **diversity** to break users out of the "echo chamber" — the loop where a system keeps recommending more of what you've already seen. It combines content-based filtering, collaborative filtering, and Singular Value Decomposition, then layers four hybrid variations that inject serendipity, enforce genre diversity, and re-rank with Maximal Marginal Relevance.
+A movie recommender that deliberately balances **relevance** against **diversity** to break users out of the "echo chamber", the loop where a system keeps recommending more of what you've already seen. It combines content-based filtering, collaborative filtering, and Singular Value Decomposition, then layers four hybrid variations that inject serendipity, enforce genre diversity, and re-rank with Maximal Marginal Relevance.
 
 > MSc Data Science dissertation project, University of Surrey. Built on the MovieLens 25M dataset.
 
@@ -18,7 +18,7 @@ The approach:
 - Combine them into **four hybrid variations**, adding three custom mechanisms — `add_serendipity`, `ensure_diversity`, and Maximal Marginal Relevance (`MMR`) — to push diversity without abandoning relevance.
 - Evaluate every variation on four metrics that measure both *how relevant* and *how diverse* the output is.
 
-**Headline result:** Hybrid Model 4 (content-based + SVD + all three diversity mechanisms) was the most balanced — genuinely diverse recommendations that still track the user's preferences.
+**Headline result:** Hybrid Model 4 (content-based + SVD + all three diversity mechanisms) was the most balanced, genuinely diverse recommendations that still track the user's preferences.
 
 ---
 
